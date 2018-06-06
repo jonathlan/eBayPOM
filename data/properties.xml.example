@@ -1,0 +1,14 @@
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Property list</comment>
+	<!--Driver-->
+	<entry key="GENERIC_DRIVER_LOCATION">C:\libs\drivers\</entry><!--Path to your drivers location-->
+    <entry key="CHROME_DRIVER_NAME">webdriver.chrome.driver</entry>
+    <entry key="CHROME_DRIVER_EXE">chromedriver.exe</entry>
+    <entry key="FIREFOX_DRIVER_NAME">webdriver.gecko.driver</entry>
+    <entry key="FIREFOX_DRIVER_EXE">geckodriver.exe</entry>
+	<!--WebPage-->
+	<entry key="MAIN_URL">https://twitter.com/</entry>
+	<entry key="USER">ebay-account@testserver.test</entry><!--Your account to access EBay-->
+	<entry key="PWD">ebayrpasswrod</entry><!--Your password to access EBay-->
+</properties>
