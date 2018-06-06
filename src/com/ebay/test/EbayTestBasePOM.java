@@ -9,7 +9,7 @@ import com.ebay.pages.EBayArticlePage;
 import com.ebay.pages.EBayHomePage;
 import com.ebay.pages.EBaySearchResultsPage;
 
-import helpers.Properties;
+import helpers.CustomProperties;
 
 public class EbayTestBasePOM {	
 	protected WebDriver driver = null;
@@ -20,10 +20,10 @@ public class EbayTestBasePOM {
 	@Before
 	public void setUp() {		
 			ChromeOptions ops = new ChromeOptions();
-	        ops.addArguments("--disable-notifications");
-			System.setProperty(Properties.CHROME_DRIVER_NAME, Properties.CHROME_DRIVER_LOCATION);
+	        ops.addArguments("--disable-notifications --start-maximized");
+			System.setProperty(CustomProperties.CHROME_DRIVER_NAME, CustomProperties.CHROME_DRIVER_LOCATION);
 		    driver = new ChromeDriver(ops);			
-		    driver.get(Properties.MAIN_URL);
+		    driver.get(CustomProperties.MAIN_URL);
 		    
 		    eArticlesPage = new EBayArticlePage(driver);
 		    eHomePage = new EBayHomePage(driver);
