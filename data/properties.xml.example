@@ -8,7 +8,7 @@
     <entry key="FIREFOX_DRIVER_NAME">webdriver.gecko.driver</entry>
     <entry key="FIREFOX_DRIVER_EXE">geckodriver.exe</entry>
 	<!--WebPage-->
-	<entry key="MAIN_URL">https://twitter.com/</entry>
+	<entry key="MAIN_URL">https://www.ebay.com/</entry>
 	<entry key="USER">ebay-account@testserver.test</entry><!--Your account to access EBay-->
 	<entry key="PWD">ebayrpasswrod</entry><!--Your password to access EBay-->
 </properties>
