@@ -18,6 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import com.ebay.pages.EBayArticlePage;
 import com.ebay.pages.EBayHomePage;
 import com.ebay.pages.EBaySearchResultsPage;
+import com.eclipsesource.json.JsonObject;
 
 import helpers.CustomProperties;
 
@@ -28,11 +29,13 @@ public class EbayTestBasePOM {
 	protected EBaySearchResultsPage eSearchResultsPage;
 	protected CustomProperties properties = new CustomProperties();
 	protected Properties eProp;
+	protected JsonObject jProp;
 
 	@Before
 	public void setUpPhase1() throws InvalidPropertiesFormatException, FileNotFoundException, IOException {
 		/*Load Properties*/
-		eProp = properties.LoadProperties("./data/properties.xml");
+		//eProp = properties.LoadProperties("./data/properties.xml");
+		jProp = properties.loadFromJSon("./data/config.json");
 	}
 	
 	protected void setUpPhase2(String browser, String url) {
@@ -53,13 +56,13 @@ public class EbayTestBasePOM {
 			case "Chrome":
 				ChromeOptions ops = new ChromeOptions();
 				ops.addArguments("--disable-notifications");
-				System.setProperty(eProp.getProperty("CHROME_DRIVER_NAME"), 
-						eProp.getProperty("GENERIC_DRIVER_LOCATION") + eProp.getProperty("CHROME_DRIVER_EXE"));
+				System.setProperty(jProp.get("CHROME_DRIVER_NAME").asString(), 
+						jProp.get("GENERIC_DRIVER_LOCATION").asString() + jProp.get("CHROME_DRIVER_EXE").asString());
 				driver = new ChromeDriver(ops);				
 			    break;
 			case "Firefox":
-				System.setProperty(eProp.getProperty("FIREFOX_DRIVER_NAME"), 
-						eProp.getProperty("GENERIC_DRIVER_LOCATION") + eProp.getProperty("FIREFOX_DRIVER_EXE"));
+				System.setProperty(jProp.get("FIREFOX_DRIVER_NAME").asString(), 
+						jProp.get("GENERIC_DRIVER_LOCATION").asString() + jProp.get("FIREFOX_DRIVER_EXE").asString());
 		        driver = new FirefoxDriver();
 		        break;
 			default:
@@ -89,6 +92,8 @@ public class EbayTestBasePOM {
 	
 	@After
 	public void tearDown() {
-		driver.quit();
+		if (driver != null) {
+			driver.quit();
+		}		
 	}
 }
