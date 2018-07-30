@@ -13,6 +13,7 @@ public class EbayTests extends EbayTestBasePOM {
 	@FileParameters("./data/ebayparams.csv")
 	public void test1(String browser, String article) {
 		setUpPhase2(browser, jProp.get("MAIN_URL").asString());
+		eHomePage.searchArticle(article);
 	}
 
 }
