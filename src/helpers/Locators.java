@@ -1,8 +1,6 @@
 package helpers;
 
-import org.openqa.selenium.By;
-
 public class Locators {
-	public static final By SEARCH_BTN_XPATH = By.xpath("//input[contains(@class, 'gh-tb ui-autocomplete-input')]");
-	
+	public static final String SEARCH_BTN_XPATH = "//input[@class= 'btn btn-prim gh-spr']";
+	public static final String SEARCH_TXT_XPATH = "//input[contains(@class, 'gh-tb ui-autocomplete-input')]";
 }
