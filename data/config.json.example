@@ -1,0 +1,13 @@
+{
+	"GENERIC_DRIVER_LOCATION": "C:\\libs\\drivers\\",
+	"CHROME_DRIVER_NAME": "webdriver.chrome.driver",
+	"CHROME_DRIVER_EXE": "chromedriver.exe",
+	"FIREFOX_DRIVER_NAME": "webdriver.gecko.driver",
+	"FIREFOX_DRIVER_EXE": "geckodriver.exe",
+
+
+	"MAIN_URL": "https://www.ebay.com/",
+	"USER": "ebay-account@testserver.test",
+	"PWD": "ebaypasswrod"
+	
+}
