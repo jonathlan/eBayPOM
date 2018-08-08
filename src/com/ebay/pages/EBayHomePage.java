@@ -64,7 +64,8 @@ public class EBayHomePage {
 		if(!cLang.contains("English")) {
 			Actions action = new Actions(driver);
 			action.moveToElement(geoLink).build().perform();			
-			wait.until(ExpectedConditions.elementToBeClickable(enLink)).click();			
+			wait.until(ExpectedConditions.elementToBeClickable(enLink)).click();
+			searchTxt.click();
 		}				
 	}
 
